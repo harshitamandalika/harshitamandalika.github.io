@@ -11,30 +11,30 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
-:root {
-  --default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --heading-font: Georgia, serif;
-  --nav-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+:root{
+  --default-font: "Roboto", sans-serif;
+  --heading-font: "Poppins", sans-serif;
+  --nav-font: "Poppins", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #0e0e0e; /* Background color for the entire website, including individual sections */
-  --default-color: #f0f0f0; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #d4af37; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #1a1a1a; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root{
+  --background-color:#070A12;
+  --default-color:#E7EAF5;
+  --heading-color:#FFFFFF;
+  --accent-color:#7AA2F7;
+  --surface-color:#10162C;
+  --contrast-color:#0B1020;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-  --nav-color: #f0f0f0;  /* The default color of the main navmenu links */
-  --nav-hover-color: #d4af37; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #121212; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #1a1a1a; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #f0f0f0; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #d4af37; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+:root{
+  --nav-color:#E7EAF5;
+  --nav-hover-color:#9ECE6A;
+  --nav-mobile-background-color:#0B1020;
+  --nav-dropdown-background-color:#10162C;
+  --nav-dropdown-color:#E7EAF5;
+  --nav-dropdown-hover-color:#9ECE6A;
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -428,7 +428,7 @@ h6 {
 }
 
 .footer p {
-  font-size: 15;
+  font-size: 15px;
   font-style: italic;
   padding: 0;
   margin: 0 0 30px 0;
@@ -652,7 +652,8 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/hero-bg.jpg');
+  background-image: linear-gradient(rgba(7, 10, 18, 0.85),
+  rgba(7, 10, 18, 0.85)), url('../img/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1343,15 +1344,83 @@ h2 {
 }
 
 .circular-image {
-  border-radius: 50%; /* Makes the image circular */
-  width: 350px;       /* Increase the size of the circle */
-  height: 400px;      /* Ensure height matches the width */
-  object-fit: cover;  /* Ensures the image fits the circular shape without distortion */
-  display: block;     /* Prevents inline spacing issues */
-  margin: 0 auto;     /* Centers the image in its container */
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border: 4px solid color-mix(in srgb, var(--accent-color), transparent 65%);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
 
 
 
 
+
+
+/* Resume download button */
+.resume .btn.btn-primary { margin-top: 10px; }
+
+
+/*--------------------------------------------------------------
+# Theme Polish Overrides (Modern ML Dark)
+--------------------------------------------------------------*/
+.header{
+  background-color: color-mix(in srgb, var(--background-color), transparent 10%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.services .service-item{
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.services .service-item:hover{
+  transform: translateY(-6px);
+  transition: 0.25s ease;
+}
+
+.project-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+.project-tag{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 65%);
+  color: var(--default-color);
+}
+
+/* Contact form: ensure typing & autofill are visible on dark theme */
+.contact form .form-control {
+  color: var(--default-color);
+  caret-color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 35%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+}
+
+.contact form .form-control::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 55%);
+}
+
+.contact form .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 75%);
+  outline: 0;
+}
+
+/* Chrome autofill on dark backgrounds */
+.contact form .form-control:-webkit-autofill,
+.contact form .form-control:-webkit-autofill:hover,
+.contact form .form-control:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--default-color);
+  transition: background-color 9999s ease-in-out 0s;
+  box-shadow: 0 0 0px 1000px color-mix(in srgb, var(--background-color), transparent 25%) inset;
+}
