@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harshita Mandalika</title>
+  <meta name="description" content="Harshita Mandalika - AI, Machine Learning, Data Science, NLP, LLM Applications, and Data Analytics portfolio." />
+
+  <style>
+    :root {
+      --text: #172033;
+      --muted: #5f6b7a;
+      --border: #e5e7eb;
+      --soft-border: #eef2f7;
+      --bg: #fbfcfe;
+      --card-bg: #ffffff;
+      --soft-bg: #f6f8fb;
+      --link: #0f4c81;
+      --link-dark: #093b66;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px 42px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #eef6ff 0, transparent 280px),
+        var(--bg);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      color: #111827;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 42px;
+      letter-spacing: -1px;
+    }
+
+    h2 {
+      margin-top: 46px;
+      margin-bottom: 18px;
+      font-size: 23px;
+      letter-spacing: -0.25px;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 44px;
+      height: 3px;
+      margin-top: 9px;
+      border-radius: 999px;
+      background: var(--link);
+    }
+
+    h3 {
+      margin: 0 0 5px;
+      font-size: 18px;
+    }
+
+    p {
+      margin-top: 8px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: var(--link-dark);
+      text-decoration: underline;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr 140px;
+      gap: 28px;
+      align-items: center;
+      padding: 58px 0 28px;
+    }
+
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 4px solid #ffffff;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.14);
+      background: #ffffff;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin: 0 -24px 36px;
+      padding: 13px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(251, 252, 254, 0.92);
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      display: inline-block;
+      margin-right: 18px;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: none;
+      color: var(--link);
+    }
+
+    .subtitle {
+      margin-top: 0;
+      color: var(--link);
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .intro {
+      max-width: 780px;
+      font-size: 17px;
+    }
+
+    .section-note {
+      color: #2760b1;
+      margin-top: -8px;
+      margin-bottom: 22px;
+    }
+
+    .item {
+      margin-bottom: 18px;
+      padding: 20px 22px;
+      border: 1px solid var(--soft-border);
+      border-radius: 14px;
+      background: var(--card-bg);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.035);
+    }
+
+    .item p:last-child {
+      margin-bottom: 0;
+    }
+
+    .meta {
+      margin-top: 0;
+      color: #2760b1;
+      font-size: 14px;
+    }
+
+    .skills-block p {
+      padding: 14px 16px;
+      border: 1px solid var(--soft-border);
+      border-radius: 12px;
+      background: var(--card-bg);
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    .icon-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .icon-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 1px solid #cfd8e3;
+      border-radius: 999px;
+      color: #172033;
+      background: linear-gradient(180deg, #ffffff, #f7f9fc);
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.045);
+    }
+
+    .icon-link:hover {
+      text-decoration: none;
+      border-color: #9fb4c7;
+      background: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        display: block;
+      }
+
+      .profile-photo {
+        width: 112px;
+        height: 112px;
+        margin-top: 18px;
+      }
+
+      body {
+        padding: 0 18px 36px;
+      }
+
+      header {
+        padding-top: 42px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      nav {
+        margin-left: -18px;
+        margin-right: -18px;
+        padding-left: 18px;
+        padding-right: 18px;
+        position: static;
+      }
+
+      nav a {
+        margin-bottom: 8px;
+      }
+
+      .item {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="top">
+    <div>
+      <h1>Harshita Mandalika</h1>
+      <p class="subtitle">AI & Machine Learning Engineer · Data Scientist · NLP · LLM Applications · Data Analytics</p>
+
+      <p>
+        I build applied AI and data-driven systems across machine learning, deep learning, NLP, recommender systems, analytics, and visualization.
+      </p>
+    </div>
+
+    <img class="profile-photo" src="profile_pic.jpeg" alt="Harshita Mandalika" />
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a Computer Science graduate from Texas A&amp;M University with a strong interest in Machine Learning, Deep Learning, Natural Language Processing, Recommender Systems, and Data Analytics. My work focuses on building applied AI and data-driven systems that transform complex information into useful insights, personalized recommendations, and decision-support tools.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="section-note">Projects across machine learning, NLP, recommender systems, information retrieval, multimodal learning, data analytics, and visualization.</p>
+
+      <div class="item">
+        <h3><a href="https://github.com/harshitamandalika/Prediction-of-Dengue-Fever-using-Machine-Learning./tree/main">Prediction of Dengue Fever</a></h3>
+        <p class="meta">Python · Machine Learning · Feature Selection · Hyperparameter Tuning · Research Publication</p>
+        <p>
+          Built machine learning models to predict dengue fever cases using preprocessing, feature selection, and hyperparameter tuning. The study found that climatic factors alone were insufficient for accurate prediction. This work was published in the International Journal of Artificial Intelligence and Soft Computing by Inderscience.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3><a href="https://github.com/harshitamandalika/ISR_Project">Send Me Studies</a></h3>
+        <p class="meta">Python · BM25 · Recommender Systems · LLMs · Email Feedback</p>
+        <p>
+          Built a personalized research paper recommender that ranks papers using BM25 similarity and summarizes top results with LLMs. The system sends recommendations by email and updates user profiles over time using feedback extracted from email replies, liked abstracts, and LLM-refined interests.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3><a href="https://github.com/harshitamandalika/ResumeIQ---NLP-Project">Resume IQ</a></h3>
+        <p class="meta">Python · NLP · PyMuPDF · Sentence-BERT · KeyBERT · ATS Optimization</p>
+        <p>
+          Built an NLP-based ATS optimizer that compares PDF resumes with job descriptions and generates alignment scores, matched and missing keywords, validated skills, and bullet-level revision feedback. Developed a modular pipeline for resume section extraction, semantic alignment, skill evidence validation, and bullet quality evaluation.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3><a href="https://github.com/harshitamandalika/Business-Analytics-Copilot">E-commerce Analytics Copilot</a></h3>
+        <p class="meta">Python · LangChain · LangGraph · SQL · Analytics Copilot · Data Visualization</p>
+        <p>
+          Built an analytics copilot that translates natural-language business questions into SQL, chart recommendations, and business insights over 541K+ e-commerce transactions. Used a router-based workflow to handle explain-only, SQL-only, and SQL-plus-chart requests with SQL validation and retry handling.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3><a href="https://github.com/harshitamandalika/prioritix-ai">Prioritix AI</a></h3>
+        <p class="meta">Python · NLP · Sentiment Analysis · Urgency Classification · TF-IDF · K-Means</p>
+        <p>
+          Built an NLP-based analytics system that converts 10K+ app reviews into structured user feedback signals for product and engineering decision-making. Applied sentiment and urgency classification, TF-IDF, and K-Means clustering to identify recurring user pain-point themes from high-urgency negative reviews.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3><a href="https://github.com/ApurvaMandalika9/DataVizProject-VitaFin">VitaFin: Health and Budget Tracker Dashboard</a></h3>
+        <p class="meta">Python · Flask · JavaScript · Vue.js · Chart.js · Data Visualization</p>
+        <p>
+          Built an interactive dashboard that brings health and budget visualizations together in one place. The app allows users to input personal data and view dynamic, real-time trends through a clean responsive interface, demonstrating full-stack development and data integration.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3><a href="https://github.com/harshitamandalika/Multimodal-Calorie-Predictor">Meal Nutrition Analysis using Multimodal Data</a></h3>
+        <p class="meta">Python · Deep Learning · Multimodal Learning · CGM Data · Image Data · Tabular Data</p>
+        <p>
+          Developed a multimodal deep learning model combining CGM time-series data, meal images, and tabular health features to estimate lunch calories. Fused modality-specific embeddings into a joint representation and achieved 0.3374 RMSRE on unseen test data.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3><a href="https://github.com/harshitamandalika/Bank-Marketing-Segmentation">Bank Marketing Segmentation</a></h3>
+        <p class="meta">Python · Machine Learning · Data Preprocessing · Customer Analytics</p>
+        <p>
+          Predicted whether a customer would opt for a term deposit by applying preprocessing steps like outlier removal, label encoding, data balancing, and machine learning model training.
+        </p>
+      </div>
+
+      
+      <div class="item">
+        <h3><a href="https://github.com/harshitamandalika/Employees-Database-using-SQL">Employees Database using SQL</a></h3>
+        <p class="meta">SQL · MySQL · Database Querying</p>
+        <p>
+          Used SQL queries to extract information from an employees database consisting of employees, dept_manager, departments, titles, salaries, and dept_emp tables.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3><a href="https://github.com/harshitamandalika/Bank-Customers-Analysis">Bank Customers Analysis using Tableau</a></h3>
+        <p class="meta">Tableau · Data Analytics · Customer Segmentation · Data Visualization</p>
+        <p>
+          Built an interactive Tableau dashboard to analyze bank customer demographics across job type, age group, gender, and region, helping identify high-potential customer segments for targeted marketing and improved customer conversion.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3><a href="https://github.com/harshitamandalika/Analyzing-Customer-Churn-using-PowerBI">Analyzing Customer Churn using Power BI</a></h3>
+        <p class="meta">Power BI · Data Analytics · Customer Retention · Churn Analysis</p>
+        <p>
+          Analyzed key reasons behind customer churn using Power BI, supporting customer retention decisions by identifying patterns and risk factors behind attrition.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p>
+        <strong>Programming Languages:</strong> Python, SQL, HTML, CSS, JavaScript
+      </p>
+      <p>
+        <strong>ML & AI:</strong> PyTorch, Transformers, Natural Language Processing, Large Language Models, LangChain, LangGraph, Agentic
+        Workflows, Retrieval-Augmented Generation, Classification, Regression, Clustering, Predictive Modeling, Feature Engineering
+      </p>
+      <p>
+        <strong>Frameworks & Tools:</strong> FastAPI, Flask, Streamlit, Docker, Git, GitHub Actions, CI/CD, AWS
+      </p>
+      <p>
+        <strong>Data & Visualization:</strong> MySQL, PostgreSQL, SQLite, Tableau, Pandas, NumPy, Plotly, Matplotlib
+      </p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="item">
+        <h3>Texas A&amp;M University, College Station, TX</h3>
+        <p class="meta">Master's in Computer Science · Aug 2024 - May 2026 · GPA: 3.9/4.0</p>
+        <p>
+          <strong>Coursework:</strong> Machine Learning, Deep Learning, Artificial Intelligence, Natural Language Processing, Information Storage and Retrieval, Data Mining and Analysis, Data Visualization, Analysis of Algorithms, Network Security, Operating Systems
+        </p>
+      </div>
+
+      <div class="item">
+        <h3>International Institute of Information Technology - Naya Raipur, Chhattisgarh, India</h3>
+        <p class="meta">Bachelor of Technology in Electronics &amp; Communication Engineering · Aug 2018 - May 2022 · GPA: 8.85/10.0</p>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <ul>
+        <li>
+          Published research on
+          <a href="https://www.inderscienceonline.com/doi/abs/10.1504/IJAISC.2023.137356" target="_blank">
+            Prediction of Dengue Fever
+          </a>
+          in the International Journal of Artificial Intelligence and Soft Computing.
+        </li>
+        <li>Secured second place in Deep Learning course project competition as part of coursework at TAMU.</li>
+        <li>Received institute scholarship for best academic performance at IIIT Naya Raipur for two consecutive years.</li>
+      </ul>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li><a href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/QCA3QI95JUVF" target="_blank">IBM Data Science Professional</a></li>
+        <li> <a href="https://www.udemy.com/certificate/UC-921b582d-03b5-49cf-93ef-384d6647bb0d/" target="_blank">Tableau</a></li>
+        <li><a href="https://www.udemy.com/certificate/UC-a598409e-429b-4c77-9a05-02d853d347e4/" target="_blank">MySQL</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        I am open to opportunities in AI, Machine Learning, Data Science, NLP, LLM applications, analytics, and data-driven product development. The best way to reach me is through email or LinkedIn.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="icon-links">
+      <a class="icon-link" href="mailto:harshitamandalika029@gmail.com" aria-label="Email Harshita Mandalika">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+          <path d="M3 7l9 6 9-6"></path>
+        </svg>
+      </a>
+
+      <a class="icon-link" href="https://www.linkedin.com/in/harshita-mandalika/" aria-label="LinkedIn profile">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-1 1.9-2.4 4-2.4 4.3 0 5.1 2.8 5.1 6.5V24h-4v-8.6c0-2.1 0-4.7-2.9-4.7s-3.3 2.2-3.3 4.5V24h-4V8z"></path>
+        </svg>
+      </a>
+
+      <a class="icon-link" href="https://github.com/harshitamandalika" aria-label="GitHub profile">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.6 2 3.3 1.4.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.5.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.65 18.35.5 12 .5z"></path>
+        </svg>
+      </a>
+
+    </div>
+
+    <p>© 2026 Harshita Mandalika</p>
+    <p><a href="#top">Back to top</a></p>
+  </footer>
+</body>
+</html>
