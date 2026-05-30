@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Harshita Mandalika - AI, Machine Learning, Data Science, NLP, LLM Applications, and Data Analytics portfolio." />
+<title>Harshita Mandalika</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #111110;
+    --bg2: #19181a;
+    --bg3: #222128;
+    --border: rgba(255,252,245,0.07);
+    --border-strong: rgba(255,252,245,0.13);
+    --text: #f5f0e8;
+    --text-muted: #9e9a91;
+    --text-dim: #55524e;
+    --accent: #6ea8fe;
+    --accent2: #93bffe;
+    --accent3: #3b82f6;
+    --accent-dim: rgba(110,168,254,0.08);
+    --serif: 'Libre Baskerville', Georgia, serif;
+    --sans: 'Libre Baskerville', Georgia, serif;
+    --mono: 'Libre Baskerville', Georgia, serif;
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.022;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 60px;
+    background: rgba(17,17,16,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 100px 5rem 4rem;
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(110,168,254,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(110,168,254,0.04) 1px, transparent 1px);
+    background-size: 72px 72px;
+    pointer-events: none;
+  }
+  .hero-glow {
+    position: absolute; top: -180px; right: -80px;
+    width: 650px; height: 650px;
+    background: radial-gradient(circle, rgba(110,168,254,0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-left { position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--sans); font-size: 0.78rem; font-style: normal;
+    color: var(--accent); letter-spacing: 0.05em;
+    border: 1px solid rgba(110,168,254,0.22);
+    background: rgba(110,168,254,0.07);
+    padding: 5px 12px; border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-tag::before { content: ''; display: none; }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-roles {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--text-muted); letter-spacing: 0.06em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  .hero-desc {
+    font-size: 1.05rem; color: var(--text-muted);
+    line-height: 1.8; max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px; border-radius: var(--radius-sm);
+    font-size: 0.875rem; font-weight: 600;
+    text-decoration: none; transition: all 0.2s;
+    cursor: pointer; border: none; font-family: var(--sans);
+  }
+  .btn-primary {
+    background: var(--accent); color: #0f1117;
+  }
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+  .hero-right {
+    position: relative; z-index: 1;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .hero-photo-wrap {
+    position: relative; width: 340px; height: 380px;
+  }
+  .hero-photo-frame {
+    position: absolute; inset: 0;
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    background: var(--bg2);
+    overflow: hidden;
+  }
+  .hero-photo-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+    filter: grayscale(20%) contrast(1.05);
+  }
+  .hero-photo-accent {
+    position: absolute; top: -12px; right: -12px;
+    width: 100%; height: 100%;
+    border: 1px solid rgba(110,168,254,0.16);
+    border-radius: 20px;
+    pointer-events: none;
+  }
+  
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 7rem 5rem;
+    border-top: 1px solid var(--border);
+  }
+  .section-label {
+    display: none;
+  }
+  h2 {
+    font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 2.8rem);
+    line-height: 1.1; color: var(--text);
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+  }
+  h2::after {
+    content: '';
+    display: block; width: 36px; height: 1px;
+    background: var(--accent);
+    opacity: 0.7;
+  }
+  .section-intro {
+    font-size: 1.05rem; color: var(--text-muted);
+    max-width: 560px; margin-bottom: 3.5rem;
+    text-align: center; margin-left: auto; margin-right: auto;
+  }
+  .hero-keywords {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-kw {
+    font-family: var(--sans); font-size: 0.78rem;
+    font-weight: 500; letter-spacing: 0.03em;
+    color: var(--accent);
+    border: 1px solid rgba(110,168,254,0.25);
+    background: rgba(110,168,254,0.07);
+    padding: 4px 12px; border-radius: 100px;
+  }
+
+  /* ── ABOUT ── */
+  #about .about-grid {
+    display: block;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .about-body { font-size: 1.08rem; color: var(--text-muted); line-height: 1.9; }
+  .about-highlights {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .highlight-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .highlight-card:hover { border-color: var(--border-strong); }
+  .highlight-icon { font-size: 1.4rem; margin-bottom: 8px; }
+  .highlight-title { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+  .highlight-desc { font-size: 0.85rem; color: var(--text-muted); margin-top: 2px; }
+
+  /* ── PROJECTS ── */
+  .projects-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .project-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+  }
+  .project-card:hover::before { opacity: 1; }
+  .project-card.featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--bg2) 0%, rgba(110,168,254,0.05) 100%);
+  }
+  .project-num {
+    font-family: var(--mono); font-size: 0.7rem;
+    color: var(--text-dim); letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+  .project-title {
+    font-family: var(--serif); font-size: 1.25rem;
+    color: var(--text); margin-bottom: 0.75rem;
+    line-height: 1.3;
+    text-decoration: none;
+    display: block;
+  }
+  .project-title:hover { color: var(--accent); }
+  .project-desc {
+    font-size: 0.92rem; color: var(--text-muted);
+    line-height: 1.8; flex: 1;
+    margin-bottom: 1.25rem;
+  }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: var(--mono); font-size: 0.72rem;
+    color: var(--text-dim); background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 3px 10px; border-radius: 100px;
+  }
+  .project-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.82rem; font-weight: 600;
+    color: var(--accent); text-decoration: none;
+    margin-top: 1rem;
+    transition: gap 0.2s;
+  }
+  .project-link:hover { gap: 10px; }
+  .project-link svg { width: 14px; height: 14px; }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .skill-group {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .skill-group-title {
+    font-family: var(--sans); font-size: 0.8rem;
+    font-weight: 600; letter-spacing: 0.06em;
+    color: var(--accent); text-transform: uppercase;
+    margin-bottom: 1rem; padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .skill-list {
+    list-style: none; display: flex; flex-direction: column; gap: 6px;
+  }
+  .skill-list li {
+    font-size: 0.92rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .skill-list li::before {
+    content: ''; width: 5px; height: 5px;
+    background: var(--accent); border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+  .edu-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 1.5rem 2rem;
+    align-items: start;
+  }
+  .edu-icon {
+    width: 52px; height: 52px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(110,168,254,0.15);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+  }
+  .edu-degree {
+    font-family: var(--serif); font-size: 1.3rem; color: var(--text);
+    margin-bottom: 4px;
+  }
+  .edu-school {
+    font-size: 0.9rem; color: var(--accent); font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .edu-meta {
+    font-family: var(--mono); font-size: 0.78rem;
+    color: var(--text-dim); margin-bottom: 1rem;
+  }
+  .edu-courses {
+    font-size: 0.92rem; color: var(--text-muted);
+  }
+  .edu-courses strong { color: var(--text); font-weight: 500; }
+
+  /* ── ACHIEVEMENTS ── */
+  #achievements .ach-grid {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .ach-item {
+    display: flex; align-items: flex-start; gap: 1.25rem;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem;
+  }
+  .ach-bullet {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: var(--accent-dim);
+    border: 1px solid rgba(110,168,254,0.15);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+  }
+  .ach-text { font-size: 1rem; color: var(--text-muted); line-height: 1.75; }
+  .ach-text a { color: var(--accent); text-decoration: none; }
+  .ach-text a:hover { text-decoration: underline; }
+
+  /* ── CERTIFICATIONS ── */
+  .certs-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .cert-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.25rem 1.5rem;
+    text-decoration: none; display: flex; align-items: center; gap: 12px;
+    transition: all 0.2s;
+  }
+  .cert-card:hover {
+    border-color: rgba(110,168,254,0.25);
+    background: rgba(110,168,254,0.04);
+  }
+  .cert-icon {
+    width: 38px; height: 38px; flex-shrink: 0;
+    background: var(--bg3); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+  }
+  .cert-name {
+    font-size: 0.875rem; font-weight: 600; color: var(--text);
+  }
+  .cert-provider { font-size: 0.8rem; color: var(--text-dim); }
+  .cert-arrow {
+    margin-left: auto; color: var(--text-dim);
+    font-size: 1rem; flex-shrink: 0;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--bg2);
+    position: relative; overflow: hidden;
+  }
+  .contact-glow {
+    position: absolute; bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(110,168,254,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .contact-inner {
+    position: relative; z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .contact-links { text-align: left; }
+  .contact-links {
+    display: flex; flex-direction: column; gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .contact-link {
+    display: flex; align-items: center; gap: 1.25rem;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.25rem 1.5rem;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .contact-link:hover {
+    border-color: var(--border-strong); transform: translateX(4px);
+  }
+  .contact-link-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted);
+  }
+  .contact-link-icon.email { background: rgba(110,168,254,0.1); color: var(--accent); }
+  .contact-link-icon.linkedin { background: rgba(110,168,254,0.07); color: var(--accent); }
+  .contact-link-icon.github { background: rgba(255,252,245,0.05); color: var(--text-muted); }
+  .contact-link-label { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+  .contact-link-value { font-size: 0.95rem; color: var(--text); font-weight: 500; }
+  .contact-link-arrow { margin-left: auto; color: var(--text-dim); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2rem 5rem;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.8rem; color: var(--text-dim);
+  }
+  footer a { color: var(--text-muted); text-decoration: none; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * {
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-tag { animation-delay: 0.1s; }
+  h1 { animation-delay: 0.2s; }
+  .hero-roles { animation-delay: 0.3s; }
+  .hero-desc { animation-delay: 0.4s; }
+  .hero-ctas { animation-delay: 0.5s; }
+  .hero-right { animation: fadeUp 0.7s ease 0.4s both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .project-card.featured { grid-column: span 2; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .certs-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 860px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    #hero {
+      grid-template-columns: 1fr;
+      padding: 120px 2rem 4rem;
+      text-align: center;
+    }
+    .hero-right { display: none; }
+    .hero-desc { max-width: 100%; margin: 0 auto 2.5rem; }
+    .hero-ctas { justify-content: center; }
+    section { padding: 5rem 2rem; }
+    footer { padding: 1.5rem 2rem; }
+    #about .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: span 1; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .certs-grid { grid-template-columns: 1fr; }
+    .edu-card { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Harshita M.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-left">
+    <div class="hero-tag">Open to Opportunities</div>
+    <h1>Harshita<br><em>Mandalika</em></h1>
+    <p class="hero-roles">AI/ML Engineer</p>
+    <div class="hero-keywords">
+      <span class="hero-kw">RAG</span>
+      <span class="hero-kw">LLM Fine-tuning</span>
+      <span class="hero-kw">Agentic AI</span>
+      <span class="hero-kw">NLP</span>
+      <span class="hero-kw">Multimodal</span>
+      <span class="hero-kw">Ranking</span>
+      <span class="hero-kw">Retrieval</span>
+    </div>
+    <p class="hero-desc">
+      I build retrieval and ranking systems, LLM fine-tuning pipelines, agentic AI workflows, and multimodal deep learning models, with a focus on search, recommendation, and applied NLP, across healthcare, e-commerce, and product domains.
+    </p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <img src="https://harshitamandalika.github.io/profile_pic.jpeg" alt="Harshita Mandalika" onerror="this.style.display='none'; this.parentElement.style.background='var(--bg3)';" />
+      </div>
+      <div class="hero-photo-accent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <h2>About</h2>
+  <div class="about-grid">
+    <div>
+      <p class="about-body">
+        Master's in Computer Science graduate from Texas A&amp;M University (GPA 3.9) with experience building retrieval and ranking systems, LLM fine-tuning pipelines, agentic AI workflows, and multimodal deep learning models. Skilled in hybrid search, NLP, and ML evaluation, with a passion for search and recommendation systems and strong engineering skills in Python and PyTorch. Applied across healthcare, e-commerce, and product domains.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <h2>Projects</h2>
+  <p class="section-intro">Projects across machine learning, NLP, recommender systems, multimodal learning, analytics, and visualization.</p>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-num">01</div>
+      <a href="https://github.com/harshitamandalika/medical-rag" target="_blank" class="project-title">Medical Literature RAG + Eval Dashboard</a>
+      <p class="project-desc">Hybrid RAG pipeline over 574 PubMed abstracts achieving RAGAS faithfulness of 0.90 and answer relevancy of 0.60. Combined ChromaDB dense vector search and BM25 sparse retrieval via Reciprocal Rank Fusion, with a live Streamlit eval dashboard tracking metrics across all pipeline runs via MLflow.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">ChromaDB</span><span class="tag">RAGAS</span><span class="tag">MLflow</span><span class="tag">Gemini API</span><span class="tag">Streamlit</span>
+      </div>
+      <a href="https://github.com/harshitamandalika/medical-rag" target="_blank" class="project-link">View on GitHub <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">02</div>
+      <a href="https://github.com/harshitamandalika/clinical-note-summarization" target="_blank" class="project-title">Clinical Note Summarization</a>
+      <p class="project-desc">Fine-tuned Mistral 7B on clinical note summarization using QLoRA/PEFT, improving ROUGE-L from 17.2% to 60.8% over the few-shot baseline across 100 held-out notes. Reduced trainable parameters by 99.9% (7.2B → 6.8M) using LoRA adapters with 4-bit NF4 quantization on a single T4 GPU.</p>
+      <div class="project-tags">
+        <span class="tag">Mistral 7B</span><span class="tag">QLoRA</span><span class="tag">PEFT</span><span class="tag">HuggingFace</span><span class="tag">ROUGE</span><span class="tag">BERTScore</span>
+      </div>
+      <a href="https://github.com/harshitamandalika/clinical-note-summarization" target="_blank" class="project-link">View on GitHub <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">03</div>
+      <a href="https://github.com/harshitamandalika/prioritix-ai" target="_blank" class="project-title">Prioritix AI</a>
+      <p class="project-desc">An NLP-based analytics system that converts 10K+ app reviews into structured user feedback signals for product and engineering decision-making. Applied sentiment and urgency classification, TF-IDF, and K-Means clustering to identify recurring user pain-point themes from high-urgency negative reviews.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">NLP</span><span class="tag">Sentiment Analysis</span><span class="tag">Urgency Classification</span><span class="tag">TF-IDF</span><span class="tag">K-Means</span>
+      </div>
+      <a href="https://github.com/harshitamandalika/prioritix-ai" target="_blank" class="project-link">View on GitHub <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">04</div>
+      <a href="https://github.com/harshitamandalika/Business-Analytics-Copilot" target="_blank" class="project-title">E-commerce Analytics Copilot</a>
+      <p class="project-desc">Agentic analytics copilot that translates natural-language business questions into SQL, chart recommendations, and insights over 541K+ transactions. Built on a router-based LangGraph agentic workflow that dynamically routes queries to the right tool or analysis step.</p>
+      <div class="project-tags">
+        <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">SQL</span><span class="tag">Data Viz</span>
+      </div>
+      <a href="https://github.com/harshitamandalika/Business-Analytics-Copilot" target="_blank" class="project-link">View on GitHub <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+
+    <div class="project-card">
+      <div class="project-num">05</div>
+      <a href="https://github.com/harshitamandalika/ISR_Project" target="_blank" class="project-title">Send Me Studies</a>
+      <p class="project-desc">Personalized research paper recommender with an agentic feedback loop that ranks papers using BM25, summarizes top results with LLMs, delivers recommendations by email, and autonomously updates user profiles by extracting preferences from email replies and liked abstracts.</p>
+      <div class="project-tags">
+        <span class="tag">BM25</span><span class="tag">LLMs</span><span class="tag">Recommender</span><span class="tag">Email Feedback</span>
+      </div>
+      <a href="https://github.com/harshitamandalika/ISR_Project" target="_blank" class="project-link">View on GitHub <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">06</div>
+      <a href="https://github.com/harshitamandalika/ResumeIQ---NLP-Project" target="_blank" class="project-title">Resume IQ</a>
+      <p class="project-desc">NLP-based ATS optimizer that compares PDF resumes with job descriptions, generating alignment scores, matched/missing keywords, and bullet-level revision feedback via a modular pipeline.</p>
+      <div class="project-tags">
+        <span class="tag">NLP</span><span class="tag">Sentence-BERT</span><span class="tag">KeyBERT</span><span class="tag">ATS</span>
+      </div>
+      <a href="https://github.com/harshitamandalika/ResumeIQ---NLP-Project" target="_blank" class="project-link">View on GitHub <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">07</div>
+      <a href="https://github.com/harshitamandalika/Prediction-of-Dengue-Fever-using-Machine-Learning./tree/main" target="_blank" class="project-title">Prediction of Dengue Fever</a>
+      <p class="project-desc">ML models predicting dengue fever cases using preprocessing, feature selection, and hyperparameter tuning. Published in the International Journal of Artificial Intelligence and Soft Computing.</p>
+      <div class="project-tags">
+        <span class="tag">Machine Learning</span><span class="tag">Feature Selection</span><span class="tag">Published</span>
+      </div>
+      <a href="https://github.com/harshitamandalika/Prediction-of-Dengue-Fever-using-Machine-Learning./tree/main" target="_blank" class="project-link">View on GitHub <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">08</div>
+      <a href="https://github.com/harshitamandalika/Multimodal-Calorie-Predictor" target="_blank" class="project-title">Multimodal Calorie Predictor</a>
+      <p class="project-desc">Deep learning model fusing CGM time-series data, meal images, and tabular health features to estimate lunch calories. Achieved 0.3374 RMSRE on unseen test data.</p>
+      <div class="project-tags">
+        <span class="tag">Deep Learning</span><span class="tag">Multimodal</span><span class="tag">CGM Data</span>
+      </div>
+      <a href="https://github.com/harshitamandalika/Multimodal-Calorie-Predictor" target="_blank" class="project-link">View on GitHub <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">09</div>
+      <a href="https://github.com/ApurvaMandalika9/DataVizProject-VitaFin" target="_blank" class="project-title">VitaFin Dashboard</a>
+      <p class="project-desc">Interactive dashboard unifying health and budget visualizations. Users input personal data and view dynamic real-time trends through a clean responsive full-stack interface built with Flask and Vue.js.</p>
+      <div class="project-tags">
+        <span class="tag">Flask</span><span class="tag">Vue.js</span><span class="tag">Chart.js</span><span class="tag">Data Viz</span>
+      </div>
+      <a href="https://github.com/ApurvaMandalika9/DataVizProject-VitaFin" target="_blank" class="project-link">View on GitHub <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">10</div>
+      <a href="https://github.com/harshitamandalika/Bank-Marketing-Segmentation" target="_blank" class="project-title">Bank Marketing Segmentation</a>
+      <p class="project-desc">Predicted whether a customer would opt for a term deposit using outlier removal, label encoding, data balancing, and ML model training on bank marketing data.</p>
+      <div class="project-tags">
+        <span class="tag">Machine Learning</span><span class="tag">Customer Analytics</span><span class="tag">Preprocessing</span>
+      </div>
+      <a href="https://github.com/harshitamandalika/Bank-Marketing-Segmentation" target="_blank" class="project-link">View on GitHub <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">11</div>
+      <a href="https://github.com/harshitamandalika/Bank-Customers-Analysis" target="_blank" class="project-title">Bank Customers Analysis</a>
+      <p class="project-desc">Interactive Tableau dashboard analyzing customer demographics across job type, age, gender, and region to identify high-potential segments for targeted marketing.</p>
+      <div class="project-tags">
+        <span class="tag">Tableau</span><span class="tag">Data Analytics</span><span class="tag">Segmentation</span>
+      </div>
+      <a href="https://github.com/harshitamandalika/Bank-Customers-Analysis" target="_blank" class="project-link">View on GitHub <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Skills</div>
+  <h2>Technical Skills</h2>
+  <p class="section-intro">Languages, frameworks, and tools I work with regularly.</p>
+
+  <div class="skills-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="skill-group">
+      <div class="skill-group-title">Languages</div>
+      <ul class="skill-list">
+        <li>Python</li>
+        <li>SQL</li>
+        <li>JavaScript</li>
+        <li>HTML / CSS</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Search & Retrieval</div>
+      <ul class="skill-list">
+        <li>Hybrid Retrieval (Dense + BM25)</li>
+        <li>Reciprocal Rank Fusion</li>
+        <li>Vector Search</li>
+        <li>ChromaDB</li>
+        <li>Information Retrieval</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">AI & GenAI</div>
+      <ul class="skill-list">
+        <li>LLM Fine-tuning · QLoRA · PEFT · LoRA</li>
+        <li>RAG · LangChain · LangGraph</li>
+        <li>Agentic Workflows</li>
+        <li>Gemini API · HuggingFace</li>
+        <li>Transformers · NLP</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">ML & Evaluation</div>
+      <ul class="skill-list">
+        <li>RAGAS · BERTScore · ROUGE</li>
+        <li>Predictive Modeling</li>
+        <li>Classification · Clustering</li>
+        <li>A/B Testing</li>
+        <li>Statistical Analysis</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Frameworks & Tools</div>
+      <ul class="skill-list">
+        <li>PyTorch</li>
+        <li>FastAPI · Flask · Streamlit</li>
+        <li>React · Docker</li>
+        <li>Git · GitHub Actions · MLflow</li>
+        <li>AWS</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Data & Visualization</div>
+      <ul class="skill-list">
+        <li>MySQL · PostgreSQL · SQLite</li>
+        <li>Tableau</li>
+        <li>Pandas · NumPy</li>
+        <li>Plotly · Matplotlib</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Education</div>
+  <h2>Education</h2>
+  <div class="edu-grid">
+
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <div class="edu-degree">Master's in Computer Science</div>
+        <div class="edu-school">Texas A&M University, College Station, TX</div>
+        <div class="edu-meta">Aug 2024 – May 2026 &nbsp;·&nbsp; GPA: 3.9 / 4.0</div>
+        <div class="edu-courses">
+          <strong>Coursework:</strong> Machine Learning, Deep Learning, Artificial Intelligence, NLP, Information Storage & Retrieval, Data Mining & Analysis, Data Visualization, Analysis of Algorithms, Network Security, Operating Systems
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-icon">🎖️</div>
+      <div>
+        <div class="edu-degree">B.Tech in Electronics & Communication Engineering</div>
+        <div class="edu-school">IIIT Naya Raipur, Chhattisgarh, India</div>
+        <div class="edu-meta">Aug 2018 – May 2022 &nbsp;·&nbsp; GPA: 8.85 / 10.0</div>
+        <div class="edu-courses">
+          Where it all began: an engineering foundation in signals, systems, and mathematics that sparked a curiosity for patterns in data and a natural pivot toward data science and machine learning.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-label">Achievements</div>
+  <h2>Achievements</h2>
+  <div class="ach-grid">
+    <div class="ach-item">
+      <div class="ach-bullet">📰</div>
+      <div class="ach-text">Published research on <a href="https://www.inderscienceonline.com/doi/abs/10.1504/IJAISC.2023.137356" target="_blank">Prediction of Dengue Fever</a> in the International Journal of Artificial Intelligence and Soft Computing (Inderscience).</div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-bullet">🥈</div>
+      <div class="ach-text">Secured second place in the Deep Learning course project competition as part of coursework at Texas A&M University.</div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-bullet">🏅</div>
+      <div class="ach-text">Received the institute scholarship for best academic performance at IIIT Naya Raipur for two consecutive years.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-label">Certifications</div>
+  <h2>Certifications</h2>
+  <div class="certs-grid">
+    <a href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/QCA3QI95JUVF" target="_blank" class="cert-card">
+      <div class="cert-icon">🎖️</div>
+      <div>
+        <div class="cert-name">IBM Data Science Professional</div>
+        <div class="cert-provider">Coursera · IBM</div>
+      </div>
+      <div class="cert-arrow">↗</div>
+    </a>
+    <a href="https://www.udemy.com/certificate/UC-921b582d-03b5-49cf-93ef-384d6647bb0d/" target="_blank" class="cert-card">
+      <div class="cert-icon">📊</div>
+      <div>
+        <div class="cert-name">Tableau</div>
+        <div class="cert-provider">Udemy</div>
+      </div>
+      <div class="cert-arrow">↗</div>
+    </a>
+    <a href="https://www.udemy.com/certificate/UC-a598409e-429b-4c77-9a05-02d853d347e4/" target="_blank" class="cert-card">
+      <div class="cert-icon">🗄️</div>
+      <div>
+        <div class="cert-name">MySQL</div>
+        <div class="cert-provider">Udemy</div>
+      </div>
+      <div class="cert-arrow">↗</div>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-glow"></div>
+  <div class="contact-inner">
+    <div class="section-label">Contact</div>
+    <h2>Contact</h2>
+    <p class="section-intro">Open to opportunities in AI, Machine Learning, Data Science, NLP, LLM applications, analytics, and data-driven product development.</p>
+
+    <div class="contact-links">
+      <a href="mailto:harshitamandalika029@gmail.com" class="contact-link">
+        <div class="contact-link-icon email">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <div>
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-value">harshitamandalika029@gmail.com</div>
+        </div>
+        <div class="contact-link-arrow">→</div>
+      </a>
+      <a href="https://www.linkedin.com/in/harshita-mandalika/" target="_blank" class="contact-link">
+        <div class="contact-link-icon linkedin">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div>
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-value">linkedin.com/in/harshita-mandalika</div>
+        </div>
+        <div class="contact-link-arrow">→</div>
+      </a>
+      <a href="https://github.com/harshitamandalika" target="_blank" class="contact-link">
+        <div class="contact-link-icon github">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </div>
+        <div>
+          <div class="contact-link-label">GitHub</div>
+          <div class="contact-link-value">github.com/harshitamandalika</div>
+        </div>
+        <div class="contact-link-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Harshita Mandalika</span>
+  <a href="#hero">Back to top ↑</a>
+</footer>
+
+</body>
+</html>
